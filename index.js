@@ -96,7 +96,6 @@ const welkom = JSON.parse(fs.readFileSync('./lib/welcome.json'))
 const _premium = JSON.parse(fs.readFileSync('./database/bot/premium.json'));
 const _afk = JSON.parse(fs.readFileSync('./database/afk.json'));
 const tictactoe = JSON.parse(fs.readFileSync("./lib/tictactoe.json"))
-let ban = JSON.parse(fs.readFileSync('./database/ban.json'));
 let mute = JSON.parse(fs.readFileSync('./database/mute.json'));
 const autosticker = JSON.parse(fs.readFileSync("./database/autosticker.json"))
 //===================================================//
@@ -954,8 +953,8 @@ menu = `❏  ${ucapanWaktu} *@${senderr.split('@')[0]}*
 ❏ P R E M I U M - M E N U
 ├  ${prefix}premium add *@tag|nomor*
 ├  ${prefix}premium del *@tag|nomor*
-├  ${prefix}cekpremium
-└  ${prefix}listpremium
+└  ${prefix}cekpremium
+
 
 ❏  I N G F O - B O T
 ├  Lib : Baileys
@@ -1041,6 +1040,8 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
    }
    break	
    case 'instagram':
+   case 'ig':
+   case 'igdl':
 				    reply(mess.wait)
 				    anu = await fetchJson(`https://lolhuman.herokuapp.com/api/instagram2?apikey=${lolkey}&url=${args[0]}`)
 				    buffer = await getBuffer(anu.result.media[0])
