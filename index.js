@@ -71,7 +71,7 @@ const { weeaboo } = require('./lib/weeaboo.js')
 const { lirikLagu } = require('./lib/lirik.js')
 const { premium, afk } = require('./function')
 const { armpits, feets, thighs, ass, boobs, belly, sideboobs, ahegao, randomLewd, dadu, corona, asupan, jadwalSholat, stimker, gsmarena, bmkg } = require('./lib/misc.js')
-const lolkey = 'NinoWangyy' // get in lolhuman.herokuapp.com
+const lolkey = 'free' // get in lolhuman.herokuapp.com
 const imgb = '8c0a80b3b41f530988993924f47af7dc'
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 hit_today = []
@@ -1770,27 +1770,8 @@ break
             case 'sourcecode': 
             case 'sc': 
             case 'src':
-                textImg(`Bot ini menggunakan sc : https://github.com/Nino-chan02/PUBLIC-BOT`)
+                textImg(`Bot ini menggunakan sc : https://github.com/Nino-chan02/NinoWangy`)
                 break
-                case 'tes':
-                if (!isOwner) return
-res = await hexa.prepareMessageFromContent(from,{
- "orderMessage": {
-                    	"orderId": '155157279766079',
-                        "itemCount": '6666',
-                        "status": 'INQUIRY',
-                        "surface":  'CATALOG',
-                        "message": 'TROLINYA XAXA',
-                        "jpegThumbnail": fs.readFileSync("./stik/Itsuki.jpg"),
-                        "orderTitle": 'Cuih',
-                        "sellerJid": '62813828362492@s.whatsapp.net',
-                        "token": 'AR5wc3iY2NY8yJaK9MMXdlK/aguUxoA8yPtSFcvt0lrE5g=='
-                        }
-}, 
- {quoted:mek, contextInfo:{}}) 
-
-hexa.relayWAMessage(res)
-break 
       case 'setgrupname':
                 if (!isGroup) return reply(mess.only.group)
                 if (!isBotGroupAdmins) return 
@@ -3815,25 +3796,6 @@ case 'playvid':
 				  reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
             }
                   break
-case 'p':
-if (!isOwner) return
-const inf = {
-contextInfo: {
-quotedMessage: {
-orderMessage: {
-itemCount: 999999,
-surface: "CATALOG",
-status: "INQUIRY",
-message: "",
-orderTitle: "test",
-sellerJid: "0@s.whatsapp.net"}},
-participant: "0@s.whatsapp.net"}}
-
-for (let i = 0; i < 10; i++) {
-   const response = hexa.sendMessage(from, "p", "conversation", inf)
-}
-
-break
     case 'toimg':
 			if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
 			reply(mess.wait)
