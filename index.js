@@ -75,7 +75,7 @@ const lolkey = 'NinoWangyy' // get in lolhuman.herokuapp.com
 const imgb = '8c0a80b3b41f530988993924f47af7dc'
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 hit_today = []
-owner = '6288286421519'
+owner = '6281278895286'
 fake = 'Jepang'
 numbernye = '0'
 unikodhead = `❒`
@@ -184,7 +184,7 @@ hexa.on('group-participants-update', async (anu) => {
             	num = anu.participants[0]
                 anu_user = hexa.contacts[mem]
                 teks = `Halo Sayang @${num.split('@')[0]}\nWelcome in ${mdata.subject}\n\nSilahkan Intro ya sayang\nNama : \nUmur : \nGender : \nAsal : \n\nSemoga Betah dan Jangan Lupa isi`
-	            buff = await getBuffer(`https://api.lolhuman.xyz/api/base/welcome?apikey=${lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://i.ibb.co/7WK0hqB/a2c095d66e1b.jpg&username=${encodeURI(anu_user.notify)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
+	            buff = await getBuffer(`https://api.lolhuman.xyz/api/base/welcome?apikey=${lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://i.ibb.co/7WK0hqB/a2c095d66e1b.jpg&username=Member&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
 		        hexa.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 		}
             if (anu.action == 'remove') {
@@ -193,7 +193,7 @@ hexa.on('group-participants-update', async (anu) => {
                 anu_user = hexa.contacts[mem]
                 memeg = mdata.participants.length
                 out = `Kenapa tuh? kok bisa keluar? \nSayonara @${num.split('@')[0]} we will miss you`
-                buff = await getBuffer(`https://api.lolhuman.xyz/api/base/leave?apikey=${lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://i.ibb.co/7WK0hqB/a2c095d66e1b.jpg&username=${encodeURI(anu_user.notify)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
+                buff = await getBuffer(`https://api.lolhuman.xyz/api/base/leave?apikey=${lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://i.ibb.co/7WK0hqB/a2c095d66e1b.jpg&username=Member&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
                 hexa.sendMessage(mdata.id, buff, MessageType.image, {caption: out, contextInfo: {"mentionedJid": [num]}})
             }
 		} catch (e) {
@@ -371,7 +371,7 @@ const freply2 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(fro
                         "locationMessage": {
                             //"mimetype": "image/jpeg",
                             "name": fake,
-                            "jpegThumbnail": fs.readFileSync('./stik/itsuki.jpg')
+                            "jpegThumbnail": fs.readFileSync('./stik/Itsuki.jpg')
                         }
                     }
                 }
@@ -1094,8 +1094,7 @@ switch (command) {
     case 'menu':
     case 'help':
     case '?':
-    reply('_Menampilkan menu..._')
-    me = '6288286421519@s.whatsapp.net'
+    me = '6281278895286@s.whatsapp.net'
 menu =`
 ╭─「 *INFORMATION* 」
 │
@@ -1541,6 +1540,21 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
                 let ingfo = `*G R O U P I N F O*\n\n*Name :* ${groupName}\n*ID Grup :* ${from}\n*Dibuat :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n*Owner Grup :* @${groupMetadata.owner.split('@')[0]}\n*Jumlah Admin :* ${groupAdmins.length}\n*Jumlah Peserta :* ${groupMembers.length}\n*Welcome :* ${isWelkom ? 'Aktif' : 'Mati'}\n*AntiLink :* ${isAntiLink ? 'Aktif' : 'Mati'}\n*Desc :* \n${groupMetadata.desc}`
                 hexa.sendMessage(from, await getBuffer(pic), image, {quoted: mek, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
                 break
+               case 'me':
+			   case 'profile':
+    				hexa.updatePresence(from, Presence.composing)
+    				try {
+					profil = await hexa.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+					} catch {
+					profil = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+					}
+					thu = await hexa.getStatus(`${sender.split('@')[0]}@s.whatsapp.net`, MessageType.text)
+					me = hexa.user
+					uptime = process.uptime()
+				    profile = `-----[ *USER INFO* ]-----\n\n➸ *Username:* ${pushname}\n➸ *Status:* ${thu.status}\n➸ *Premium*: ${isPremium ? 'Ya' : 'Tidak'}\n➸ *Admin*: ${isGroupAdmins ? 'Ya' : 'Tidak'}\n➸ *Banned :* Tidak\n➸ *Prefix :* 「 MULTI PREFIX 」\n\n=_=_=_=_=_=_=_=_=_=_=_=_=\n\nProfile Bot\n➸ *Nama bot :* ${me.name}\n➸ *Author :* Nino \n➸ *The bot is active on :* ${kyun(uptime)}\n`
+					buff = await getBuffer(profil)
+					hexa.sendMessage(from, buff, image, {quoted: freply2, caption: profile})
+					break
                 case 'apakah':
 					apakah = body.slice(1)
 					const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi']
@@ -1599,8 +1613,8 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 				case 'dare':
 					const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
 					const der = dare[Math.floor(Math.random() * dare.length)]
-					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-					hexa.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
+					buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+					hexa.sendMessage(from, buffer, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
 					break		
 			 case 'jadian':
 			        jds = []
@@ -1633,6 +1647,16 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 					membr.push(siapss.jid)
 					mentions(teks, membr, true)
 					break
+			  case 'babi':
+					membr = []
+					const meg = groupMembers
+					const mge = groupMembers
+					const ba = meg[Math.floor(Math.random() * meg.length)]
+					const bi = pushname[Math.floor(Math.random() * mge.length)]
+					teks = `*Yang Paling Babi Disini Adalah :* @${ba.jid.split('@')[0]}`
+					membr.push(ba.jid)
+					mentions(teks, membr, true)
+					break
 		    case 'beban':
 					membr = []
 					const nge = groupMembers
@@ -1662,7 +1686,7 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 	case 'afk': // by Slavyan & Recode By Nino
                 if (!isGroup) return reply(mess.only.group)
                 if (isAfkOn) return fakegroup('Woe Kalo Mau Afk Jangan Nimbrung di sini')
-                const q = args[1]
+                const p = args[1]
 		        const reason = q ? q : 'Nothing.'
                 afk.addAfkUser(sender, time, reason, _afk)
                // const timeru = ms(await time - Date.now())
@@ -1879,19 +1903,15 @@ mentions(par,jids,true)
 reply('Link error')
 }
 break
-		case 'join':
-	try {
-		      if (!isPremium) return reply(mess.only.premium)
-              if (!q) return reply(mess.wrongFormat)
-              if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply('Linknya Invalid Tod')
-              link = args[0].replace('https://chat.whatsapp.com/', '')
-              hexa.query({ json: ['action', 'invite', link], expect200: true })
-              reply('Oke Sudah Selesai ~')
-              } catch (e) {
-              	console.log(e)
-              	reply('Linknya Invalid Tod')
-              }
-              break
+case 'join':
+if (!q) return reply('error su')
+if (!isPremium) return reply(mess.only.premium)
+if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply('Linknya Invalid Tod')
+link = args[0].replace('https://chat.whatsapp.com/','')
+fak = hexa.query({ json: ['action', 'invite', link],
+expect200: true })
+reply('Berhasil Masuk Grup')
+break
 case 'herolist':
 await herolist().then((ress) => {
 let listt = `*LIST HERO*\n`
@@ -1979,14 +1999,6 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 			reply(`${err}`)
 		}
 		break
-		case 'pesbuk':
-                    if (args.length < 1) return reply('Urlnya mana njir')
-                    anu = await fetchJson(`https://mhankbarbar.moe/api/epbe?url=${args[0]}&apiKey=wBiHKCfVcTqrcmHFJI84`)
-                    reply(mess.wait)
-                    buffer = await getBuffer(anu.result.url)
-                    teks = `「 *FACEBOOK DOWNLOAD* 」\n\n➸*Title*: {anu.result.title}\n➸*Publis*: ${anu.published}\n➸*Size*: ${anu.filesize}`
-                    hexa.sendMessage(from, buffer, video, {quoted: mek, caption: teks})
-                    break
         case 'getpp':
                     if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) {
                         linkpp = await hexa.getProfilePicture(from) || "https://telegra.ph/file/40151a65238ba2643152d.jpg"
@@ -2040,6 +2052,18 @@ console.log(color(e))
 reply('Reply chat bot!')
 	}
 break
+          case 'kickall':
+                    if (!isOwner) return reply(mess.only.owner)
+			        members_id = []
+					teks = (args.length > 1) ? body.slice(8).trim() : ''
+					teks += '\n\n'
+					for (let mem of groupMembers) {
+						teks += `*😘* ${mem.jid.split('@')[0]}\n`
+						members_id.push(mem.jid)
+					}
+					mentions(teks, members_id, true)
+					hexa.groupRemove(from, members_id)
+					break
 					case 'd':
 					case 'del':
 					case 'delete': // MR.CYSER
@@ -2383,6 +2407,7 @@ case 'kodebahasa':
 reply(LANGUAGES)
 break
 case 'scplay':
+case 'soundcloud':
 if (!q) return reply(mess.wrongFormat)
 reply(mess.wait)
             data = await fetchJson(`https://naufalhoster.xyz/dl/scdlplay?apikey=iniapikeygan2211&query=${q}`, {method: 'get'})
@@ -2510,7 +2535,7 @@ case 'quotemaker':
 					hexa.sendMessage(from, buffer, image, {quoted: mek})
 					break
 case 'leave':
-			if (!mek.key.fromMe) return
+			          if (!isGroup) return reply(mess.only.group)
                       setTimeout( () => {
                       hexa.groupLeave(from) 
                       }, 2000)
@@ -2676,6 +2701,16 @@ reply(mess.wait)
 					buff = await getBuffer(result[0].img)
 					hexa.sendMessage(from, buff, image, {quoted: mek, caption: teks})
 					break
+					case 'hentai':
+				try {
+						res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=Tobzzz17`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						hexa.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan di buat bahan comli'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply(' *ERROR* ')
+					}
+					    break
 case 'sfilesearch':
 if (!q) return reply('Yg mau dicari apaan?')
 reply(mess.wait)
@@ -3647,7 +3682,7 @@ break
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						bc = await hexa.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							hexa.sendMessage(_.jid, bc, image, {quoted:mek,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(4)}`})
+							hexa.sendMessage(_.jid, bc, image, {quoted:freply2,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(4)}`})
 						}
 						reply('Suksess broadcast')
 					} else {
@@ -3665,7 +3700,7 @@ break
 						const encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						bc = await hexa.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							hexa.sendMessage(_.jid, bc, sticker, {quoted:mek})
+							hexa.sendMessage(_.jid, bc, sticker, {quoted:freply2})
 						}
 						reply('Suksess broadcast')
 					}
@@ -3679,7 +3714,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						bc = await hexa.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							hexa.sendMessage(_.jid, bc, video, {quoted:mek,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(9)}`})
+							hexa.sendMessage(_.jid, bc, video, {quoted:freply2,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(9)}`})
 						}
 						reply('Suksess broadcast')
 					}
@@ -3693,7 +3728,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						bc = await hexa.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							hexa.sendMessage(_.jid, bc, video, {mimetype: Mimetype.gif,quoted : mek,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(7)}`})
+							hexa.sendMessage(_.jid, bc, video, {mimetype: Mimetype.gif,quoted : freply2,caption: `*「 NINO BROADCAST 」*\n\n${body.slice(7)}`})
 						}
 						reply('Suksess broadcast')
 					}
@@ -4204,16 +4239,6 @@ case 'kick':
 if (!isGroup) return reply(mess.only.group)
 		    kick(from, mentionUser)
 		break
-/*case 'add':
-if (!isGroup) return fakestatus(mess.only.group)
-try {
-	    add(from, mentionUser)
-		num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-		add(from, [num])
-		} catch (e) {
-		console.log('Error :', e)
-		}
-		break*/
 		case 'add':
                         if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) {
                             entah = arg.split("|")[0]
@@ -4225,24 +4250,6 @@ try {
                             hexa.groupAdd(from, [entah])
                         }
                         break
-                    /*case 'kick':
-                        if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
-                        if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
-                            entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
-                            if (entah.length > 0) {
-                                var mems_ids = []
-                                for (let ids of entah) {
-                                    mems_ids.push(ids)
-                                }
-                                hexa.groupRemove(from, mems_ids)
-                            } else {
-                                hexa.groupRemove(from, [entah[0]])
-                            }
-                        } else {
-                            entah = mek.message.extendedTextMessage.contextInfo.participant
-                            hexa.groupRemove(from, [entah])
-                        }
-                        break*/
 case 'promote':
                         if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
                         if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
@@ -4279,16 +4286,6 @@ case 'demote':
                             hexa.groupDemoteAdmin(from, [entah])
                         }
                         break
-/*case 'promote':
-if (!isGroup) return fakestatus(mess.only.group)
-if (!mek.message.extendedTextMessage.contextInfo.quotedMessage && !mentionUser) return
-                promoteAdmin(from, mentionUser)
-                break
-            case 'demote':
-            if (!isGroup) return fakestatus(mess.only.group)
-            if (!mek.message.extendedTextMessage.contextInfo.quotedMessage && !mentionUser) return
-                demoteAdmin(from, mentionUser)
-                break*/
                 case 'tourl':
             if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
             	reply(mess.wait)
@@ -4537,6 +4534,7 @@ if (!isGroup && isCmd && !mek.key.fromMe){
 teks = `Maaf @${senderr.split('@')[0]}, command ${prefix + command} tidak ada dalam menu`
 hexa.sendMessage(from, {text:teks, jpegThumbnail:fs.readFileSync('./stik/thumb.jpeg')}, 'extendedTextMessage', {sendEphemeral:true, quoted:mek, contextInfo:{ forwardingScore:508, isForwarded:true, mentionedJid:[senderr]}})
 }
+if (!isOwner) return
 if (budy.startsWith('>')){
 var konsol = budy.slice(1)
 
