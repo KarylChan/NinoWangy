@@ -39,6 +39,7 @@ exports.funMenu = (prefix) => {
 ├ ❏ ${prefix}cantik
 ├ ❏ ${prefix}ganteng
 ├ ❏ ${prefix}beban
+├ ❏ ${prefix}babi
 │
 └──「 *NINO BOT* 」
 `
@@ -114,6 +115,7 @@ exports.wibuMenu = (prefix) => {
 ├ ❏ ${prefix}wallnime
 ├ ❏ ${prefix}megumin
 ├ ❏ ${prefix}topanime
+├ ❏ ${prefix}hentai
 ├ ❏ ${prefix}otakuongoing
 ├ ❏ ${prefix}nhentai *code*
 │
@@ -145,6 +147,9 @@ exports.groupMenu = (prefix) => {
 │
 ├ ❏ ${prefix}afk *alasan*
 ├ ❏ ${prefix}sider *reply chat bot*
+├ ❏ ${prefix}kick *reply*
+├ ❏ ${prefix}add *reply*
+├ ❏ ${prefix}kickall
 ├ ❏ ${prefix}infogrup
 ├ ❏ ${prefix}promote
 ├ ❏ ${prefix}demote
@@ -204,6 +209,7 @@ exports.infoMenu = (prefix) => {
 ├ ❏ ${prefix}cekpremium
 ├ ❏ ${prefix}listpremium
 ├ ❏ ${prefix}rules
+├ ❏ ${prefix}profile
 ├ ❏ ${prefix}waktu
 ├ ❏ ${prefix}botstat
 ├ ❏ ${prefix}sewabot
@@ -211,6 +217,7 @@ exports.infoMenu = (prefix) => {
 ├ ❏ ${prefix}ping
 ├ ❏ ${prefix}runtime
 ├ ❏ ${prefix}donasi
+├ ❏ ${prefix}sourcecode
 ├ ❏ ${prefix}bugreport *keluhan*
 │
 └──「 *NINO BOT* 」
