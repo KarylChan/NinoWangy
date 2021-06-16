@@ -60,18 +60,17 @@ const { yta, ytv } = require("./lib/ytdl");
 const { Toxic } = require('./lib/Toxic.js')
 const { onGoing } = require("./lib/otakudesu.js")
 const { newsCnnn} = require('./lib/cnn.js')
-const { webp2gifFile } = require("./lib/gif.js")
+const { webp2gifFile, igDownloader } = require("./lib/gif.js")
 const { mediafireDl } = require('./lib/mediafire.js')
 const { herolist } = require('./lib/herolist.js')
 const { y2mateA, y2mateV } = require('./lib/y2mate.js')
-const { fotoIg, videoIg } = require('./lib/ig.js')
 const translate = require('./lib/translate')
 const { cmdadd } = require('./lib/totalcmd.js')
 const { weeaboo } = require('./lib/weeaboo.js')
 const { lirikLagu } = require('./lib/lirik.js')
 const { premium, afk } = require('./function')
 const { armpits, feets, thighs, ass, boobs, belly, sideboobs, ahegao, randomLewd, dadu, corona, asupan, jadwalSholat, stimker, gsmarena, bmkg } = require('./lib/misc.js')
-const lolkey = 'free' // get in lolhuman.herokuapp.com
+const lolkey = 'NinoWangyy' // get in lolhuman.herokuapp.com
 const imgb = '8c0a80b3b41f530988993924f47af7dc'
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 hit_today = []
@@ -201,6 +200,7 @@ hexa.on('group-participants-update', async (anu) => {
 		}
 	})
 //=================================================//
+
 hexa.on('group-update', async (anu) => {
   metdata = await hexa.groupMetadata(anu.jid)
     if(anu.announce == 'false'){
@@ -219,7 +219,7 @@ hexa.on('group-update', async (anu) => {
     hexa.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}})
     console.log(`- [ Group Description Change ] - In ${metdata.subject}`)
   }
-})
+ })
 hexa.on('chat-update', async (mek) => {
 	try {
         if (!mek.hasNewMessage) return
@@ -261,7 +261,7 @@ hexa.on('chat-update', async (mek) => {
 		const totalhit = JSON.parse(fs.readFileSync('./lib/totalcmd.json'))[0].totalcmd
 		const q = args.join(' ')
 		const botNumber = hexa.user.jid
-		const ownerNumber = ['6288286421519@s.whatsapp.net', '6281278895286@s.whatsapp.net']
+		const ownerNumber = ['6288286421519@s.whatsapp.net', '6281278895286@s.whatsapp.net', '6281249227786@s.whatsapp.net']
 		const botNumberss = hexa.user.jid + '@c.us'
 		const isGroup = from.endsWith('@g.us')
 		const groupall = hexa.chats.array.filter(v => v.jid.endsWith('g.us')).map(v => v.jid)
@@ -984,7 +984,7 @@ if (fs.existsSync(`./temp1/${from}.json`)) {
 		    const getReason = afk.getAfkReason(sender, _afk)
 		    const ittung = ms(await Date.now() - getTime)
 		    const pep = `*${pushname}* telah kembali dari AFK! Selamat datang kembali~`
-		    fakegroup(pep)
+		    reply(pep)
 		    _afk.splice(afk.getAfkPosition(sender, _afk), 1)
 		    fs.writeFileSync('./database/afk.json', JSON.stringify(_afk))
 		}
@@ -1512,9 +1512,9 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
                           break
       case 'premiumcheck':
 	  case 'cekpremium': 
-		 if (!isPremium) return fakegroup(mess.only.owner)
+		 if (!isPremium) return reply(mess.only.owner)
 	     const cekExp = ms(await premium.getPremiumExpired(sender, _premium) - Date.now())
-	     fakegroup(`*「 PREMIUM EXPIRE 」*\n\n➸ *ID*: ${sender}\n➸ *Premium left*: ${cekExp.days} day(s) ${cekExp.hours} hour(s) ${cekExp.minutes} minute(s)`)
+	     reply(`*「 PREMIUM EXPIRE 」*\n\n➸ *ID*: ${sender}\n➸ *Premium left*: ${cekExp.days} day(s) ${cekExp.hours} hour(s) ${cekExp.minutes} minute(s)`)
 		 break
             case 'listprem':
             case 'listpremium':          
@@ -1551,7 +1551,7 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 					thu = await hexa.getStatus(`${sender.split('@')[0]}@s.whatsapp.net`, MessageType.text)
 					me = hexa.user
 					uptime = process.uptime()
-				    profile = `-----[ *USER INFO* ]-----\n\n➸ *Username:* ${pushname}\n➸ *Status:* ${thu.status}\n➸ *Premium*: ${isPremium ? 'Ya' : 'Tidak'}\n➸ *Admin*: ${isGroupAdmins ? 'Ya' : 'Tidak'}\n➸ *Banned :* Tidak\n➸ *Prefix :* 「 MULTI PREFIX 」\n\n=_=_=_=_=_=_=_=_=_=_=_=_=\n\nProfile Bot\n➸ *Nama bot :* ${me.name}\n➸ *Author :* Nino \n➸ *The bot is active on :* ${kyun(uptime)}\n`
+				    profile = `-----[ *USER INFO* ]-----\n\n➸ *Username:* ${pushname}\n➸ *Status:* ${thu.status}\n➸ *Premium*: ${isPremium ? 'Ya' : 'No'}\n➸ *Admin*: ${isGroupAdmins ? 'Ya' : 'No'}\n➸ *Banned :* No\n➸ *Prefix :* 「 MULTI PREFIX 」\n\n=_=_=_=_=_=_=_=_=_=_=_=_=\n\nProfile Bot\n➸ *Nama bot :* ${me.name}\n➸ *Author :* Nino \n➸ *The bot is active on :* ${kyun(uptime)}\n`
 					buff = await getBuffer(profil)
 					hexa.sendMessage(from, buff, image, {quoted: freply2, caption: profile})
 					break
@@ -1569,12 +1569,14 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 					hexa.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
 					break
 					case 'gantengcek':
+					case 'cekganteng':
 					ganteng = body.slice(1)
 					const gan =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 					hexa.sendMessage(from, 'Pertanyaan : *'+ganteng+'*\n\nJawaban : '+ teng+'%', text, { quoted: mek })
 					break
 			   case 'cantikcek':
+			   case 'cekcantik':
 					cantik = body.slice(1)
 					const can =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
 					const tik = can[Math.floor(Math.random() * can.length)]
@@ -1683,38 +1685,25 @@ var medianye = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM',
 	                reply('Jangan tambah kan apapun pada command')
 	   }
 	                break
+case 'ig': 
+case 'instagram':
+if (!q) return reply('Link Yang Mana? ')
+if (!q.includes('instagram')) return reply(mess.error.Iv)
+reply(mess.wait)
+anu = await igDownloader(`${q}`)
+.then((data) => { sendMediaURL(from, data.result.link, data.result.desc, mek) })
+.catch((err) => { reply(String(err)) })
+break
 	case 'afk': // by Slavyan & Recode By Nino
                 if (!isGroup) return reply(mess.only.group)
-                if (isAfkOn) return fakegroup('Woe Kalo Mau Afk Jangan Nimbrung di sini')
+                if (isAfkOn) return reply('Woe Kalo Mau Afk Jangan Nimbrung di sini')
                 const p = args[1]
 		        const reason = q ? q : 'Nothing.'
                 afk.addAfkUser(sender, time, reason, _afk)
                // const timeru = ms(await time - Date.now())
                const aluty = `Fitur AFK berhasil *diaktifkan!*\n\n➸ *Ussername*: ${pushname}\n➸ *Alasan*: ${reason}`
-               fakegroup(aluty)
+               reply(aluty)
                break
-case 'ig':
-case 'instagram':
-if (args.length < 1) return reply('Link Yang Mana? ')
-if(!isUrl(args[0]) && !args[0].includes('instagram')) return reply(mess.error.Iv)
-teks = args.join(' ')
-if (!teks.endsWith('-video') && !teks.endsWith('-foto')) return reply('Ketik -foto / -video Untuk Mengisi Option ')
-reply(mess.wait)
-if (teks.endsWith('-foto')) {
-igl = teks.replace('-foto',"") 
-res = await fotoIg(igl).catch(e => {
-  reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error_')
-})
-sendFileFromUrl(res[0].foto, image, {quoted: mek})
-}
-if (teks.endsWith('-video')) {
-igl = teks.replace('-video',"")
-res = await videoIg(teks).catch(e => {
-reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error')
-})
-sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: mek})
-}
-break
 		case 'nekonime':
            data = await fetchJson('https://waifu.pics/api/sfw/neko')
            hasil = await getBuffer(data.url)
@@ -1772,6 +1761,25 @@ break
             case 'src':
                 textImg(`Bot ini menggunakan sc : https://github.com/Nino-chan02/NinoWangy`)
                 break
+                case 'tes':
+                if (!isOwner) return
+res = await hexa.prepareMessageFromContent(from,{
+ "orderMessage": {
+                    	"orderId": '155157279766079',
+                        "itemCount": '6666',
+                        "status": 'INQUIRY',
+                        "surface":  'CATALOG',
+                        "message": 'TROLINYA XAXA',
+                        "jpegThumbnail": fs.readFileSync("./stik/Itsuki.jpg"),
+                        "orderTitle": 'Cuih',
+                        "sellerJid": '62813828362492@s.whatsapp.net',
+                        "token": 'AR5wc3iY2NY8yJaK9MMXdlK/aguUxoA8yPtSFcvt0lrE5g=='
+                        }
+}, 
+ {quoted:mek, contextInfo:{}}) 
+
+hexa.relayWAMessage(res)
+break 
       case 'setgrupname':
                 if (!isGroup) return reply(mess.only.group)
                 if (!isBotGroupAdmins) return 
@@ -3628,16 +3636,6 @@ hideTag(from, `${quotedText}`)
 hideTag(from, `${q}`)
 				  }
 				    break
-case '$':
-if (!isOwner) return 
-const cod = args.join(' ')
-exec(cod, (err, stdout) => {
-if(err) return reply(`${err}`)
-if (stdout) {
-reply(`${stdout}`)
-}
-})
-break
  	/*case 'hidetag':
 			if (!mek.key.fromMe) return fakestatus('SELF-BOT')
 			if (!isGroup) return reply(mess.only.group)
@@ -3796,6 +3794,25 @@ case 'playvid':
 				  reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
             }
                   break
+case 'p':
+if (!isOwner) return
+const inf = {
+contextInfo: {
+quotedMessage: {
+orderMessage: {
+itemCount: 999999,
+surface: "CATALOG",
+status: "INQUIRY",
+message: "",
+orderTitle: "test",
+sellerJid: "0@s.whatsapp.net"}},
+participant: "0@s.whatsapp.net"}}
+
+for (let i = 0; i < 10; i++) {
+   const response = hexa.sendMessage(from, "p", "conversation", inf)
+}
+
+break
     case 'toimg':
 			if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
 			reply(mess.wait)
@@ -4025,6 +4042,16 @@ break
 					reply(`${e}`)
 					}
 				    break
+		case 'searchgrup':
+        case 'searchgroup':
+                     if (args.length == 0) return reply(`Example: ${prefix + command} kopi`)
+                     query = args.join(" ")
+                     get_result = await fetchJson(`https://api-yogipw.herokuapp.com/api/search/gcwa?query=${query}`)
+                     get_result = get_result.result
+                     ini_txt = `*Nama*: ${get_result.group_name}\n`
+                     ini_txt = `*Link*: ${get_result.link}`
+                     reply(ini_txt)
+                     break
         case 'tiktok':
 				     reply(mess.wait)
 				     anu = await fetchJson(`https://lolhuman.herokuapp.com/api/tiktok?apikey=${lolkey}&url=${args[0]}`)
@@ -4192,7 +4219,6 @@ case 'botstat':
 					reply(teks)
 break   
 case 'shutdown':
-if (!mek.key.fromMe) return
 				reply(`Bye...`)
 				await sleep(3000)
 				process.exit()
@@ -4492,6 +4518,16 @@ hhhh++
 reply(teks)
                 break
 default:
+if (!isOwner) return  
+if (budy.startsWith('$')){
+const cod = args.join(' ')
+exec(cod, (err, stdout) => {
+if(err) return reply(`${err}`)
+if (stdout) {
+reply(`${stdout}`)
+}
+})
+}
 if (!isGroup && isCmd && !mek.key.fromMe){
 teks = `Maaf @${senderr.split('@')[0]}, command ${prefix + command} tidak ada dalam menu`
 hexa.sendMessage(from, {text:teks, jpegThumbnail:fs.readFileSync('./stik/thumb.jpeg')}, 'extendedTextMessage', {sendEphemeral:true, quoted:mek, contextInfo:{ forwardingScore:508, isForwarded:true, mentionedJid:[senderr]}})
