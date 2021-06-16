@@ -32,14 +32,16 @@ exports.funMenu = (prefix) => {
 ├ ❏ ${prefix}bisakah
 ├ ❏ ${prefix}kapankah
 ├ ❏ ${prefix}rate
-├ ❏ ${prefix}gantengcek
-├ ❏ ${prefix}cantikcek
-├ ❏ ${prefix}cekwatak
 ├ ❏ ${prefix}jadian
 ├ ❏ ${prefix}cantik
 ├ ❏ ${prefix}ganteng
 ├ ❏ ${prefix}beban
 ├ ❏ ${prefix}babi
+├ ❏ ${prefix}santet
+├ ❏ ${prefix}kutuk
+├ ❏ ${prefix}cekwatak
+├ ❏ ${prefix}cekganteng
+├ ❏ ${prefix}cekcantik
 │
 └──「 *NINO BOT* 」
 `
