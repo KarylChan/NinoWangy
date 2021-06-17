@@ -71,6 +71,7 @@ exports.otherMenu = (prefix) => {
 ├ ❏ ${prefix}ssweb *query*
 ├ ❏ ${prefix}google *query*
 ├ ❏ ${prefix}image *query*
+├ ❏ ${prefix}pinterest *query*
 ├ ❏ ${prefix}nulis *teks*
 ├ ❏ ${prefix}igstalk *username*
 ├ ❏ ${prefix}githubstalk *username*
