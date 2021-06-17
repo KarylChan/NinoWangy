@@ -219,6 +219,12 @@ hexa.on('group-update', async (anu) => {
     hexa.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}})
     console.log(`- [ Group Description Change ] - In ${metdata.subject}`)
   }
+  else if(!anu.desc == ''){
+    tag = anu.descOwner.split('@')[0] + '@s.whatsapp.net'
+    teks = `- [ Group Description Change ] -\n\nDeskripsi Group telah diubah oleh Admin @${anu.descOwner.split('@')[0]}\nDeskripsi Baru : ${anu.desc}`
+    hexa.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}})
+    console.log(`- [ Group Description Change ] - In ${metdata.subject}`)
+  }
  })
 hexa.on('chat-update', async (mek) => {
 	try {
@@ -1754,7 +1760,7 @@ break
                 textImg(`GoPay : 082183281304\nSaweeria : https://saweria.co/NakanoNino\nDana : 088286421519`)
                 break
         case 'sewabot':
-                textImg(`*Sewabot*\n10k Perbulan\nGoPay : 082183281304\nDana : 088286421519\nMinat Hub\nwa.me/6288286421519\nhttps://instagram.com/nino.chan26`)
+                textImg(`*Sewabot*\n10k Perbulan\nGoPay : 082183281304\nDana : 088286421519\nMinat Hub\nwa.me/6281278895286\nhttps://instagram.com/nino.chan26`)
                 break
             case 'sourcecode': 
             case 'sc': 
@@ -4192,9 +4198,36 @@ break
             sendMediaURL(from,ren,'DONE')
             })
             break
+case 'pinterest':                
+                    if (args.length == 0) return fakegroup(`Example: ${prefix + command} loli kawaii`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=${lolkey}&query=${query}`)
+                    get_result = get_result.result
+                    for (var x = 0; x <= 5; x++) {
+                        var ini_buffer = await getBuffer(get_result[x])
+                        await hexa.sendMessage(from, ini_buffer, image)
+                    }
+                    break
+                case 'pinterestdl':                 
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://id.pinterest.com/pin/696580267364426905/`)
+                    ini_url = args[0]
+                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterestdl?apikey=${lolkey}&url=${ini_url}`)
+                    ini_url = ini_url.result[0]
+                    ini_buffer = await getBuffer(ini_url)
+                    await hexa.sendMessage(from, ini_buffer, image, { quoted: mek })
+                    break
             case 'runtime':
                 textImg(`${runtime(process.uptime())}`)
                 break
+           case 'timer':
+				if (args[1]=="detik") {var timer = args[0]+"000"
+				} else if (args[1]=="menit") {var timer = args[0]+"0000"
+				} else if (args[1]=="jam") {var timer = args[0]+"00000"
+				} else {return reply("*pilih:*\ndetik\nmenit\njam")}
+				setTimeout( () => {
+				reply("Waktu habis")
+				}, timer)
+				break
 	case 'speed':
 	case 'ping':
 			const timestamp = speed();
