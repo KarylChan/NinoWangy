@@ -1,5 +1,5 @@
 {
-  "name": "NinoWangy",
+  "name": "Nino",
   "version": "1.0.0",
   "description": "SC Nya jangan di jual ngentod",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^3.4.1",
+    "@adiwajshing/baileys": "^3.5.1",
     "@vitalets/google-translate-api": "github:vitalets/google-translate-api",
     "async": "^2.4.1",
     "awesome-phonenumber": "^2.48.0",
