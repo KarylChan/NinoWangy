@@ -37,8 +37,6 @@ exports.funMenu = (prefix) => {
 ├ ❏ ${prefix}ganteng
 ├ ❏ ${prefix}beban
 ├ ❏ ${prefix}babi
-├ ❏ ${prefix}santet
-├ ❏ ${prefix}kutuk
 ├ ❏ ${prefix}cekwatak
 ├ ❏ ${prefix}cekganteng
 ├ ❏ ${prefix}cekcantik
@@ -72,6 +70,7 @@ exports.otherMenu = (prefix) => {
 ├ ❏ ${prefix}google *query*
 ├ ❏ ${prefix}image *query*
 ├ ❏ ${prefix}pinterest *query*
+├ ❏ ${prefix}searchgrup *query*
 ├ ❏ ${prefix}nulis *teks*
 ├ ❏ ${prefix}igstalk *username*
 ├ ❏ ${prefix}githubstalk *username*
@@ -110,15 +109,23 @@ exports.wibuMenu = (prefix) => {
 ┌──「 WIBU-MENU 」
 │
 ├ ❏ ${prefix}loli
+├ ❏ ${prefix}cosplay
+├ ❏ ${prefix}manga
+├ ❏ ${prefix}anime 
 ├ ❏ ${prefix}lolivideo
+├ ❏ ${prefix}husbu
 ├ ❏ ${prefix}waifu
 ├ ❏ ${prefix}neko
-├ ❏ ${prefix}nekonime
+├ ❏ ${prefix}kanna
 ├ ❏ ${prefix}sagiri
 ├ ❏ ${prefix}wallnime
 ├ ❏ ${prefix}megumin
 ├ ❏ ${prefix}topanime
 ├ ❏ ${prefix}hentai
+├ ❏ ${prefix}nekopoi *link*
+├ ❏ ${prefix}nekopoisearch
+├ ❏ ${prefix}kusonime
+├ ❏ ${prefix}otakudesu
 ├ ❏ ${prefix}otakuongoing
 ├ ❏ ${prefix}nhentai *code*
 │
@@ -133,12 +140,10 @@ exports.ownerMenu = (prefix) => {
 ├ ❏ ${prefix}clearall
 ├ ❏ ${prefix}eval *>*
 ├ ❏ ${prefix}join *link gc*
-├ ❏ ${prefix}ban @tag|nomor
-├ ❏ ${prefix}unban @tag|nomor
 ├ ❏ ${prefix}setfakeimg
+├ ❏ ${prefix}exif *nama|author*
 ├ ❏ ${prefix}premium add @tag|nomor
 ├ ❏ ${prefix}premium del @tag|nomor
-├ ❏ ${prefix}exif *nama|author*
 │
 └──「 *NINO BOT* 」
 `
@@ -170,6 +175,7 @@ exports.groupMenu = (prefix) => {
 ├ ❏ ${prefix}autosticker *enable | disable*
 ├ ❏ ${prefix}welcome *enable | disable*
 ├ ❏ ${prefix}antilink *enable | disable*
+├ ❏ ${prefix}leveling *enable | disable*
 │
 └──「 *NINO BOT* 」
 `
@@ -178,10 +184,11 @@ exports.downloadMenu = (prefix) => {
     return `
 ┌──「 DOWNLOAD-MENU 」
 │
-├ ❏ ${prefix}ig *link*
-├ ❏ ${prefix}fb *link*
+├ ❏ ${prefix}instagram *link*
+├ ❏ ${prefix}facebook *link*
 ├ ❏ ${prefix}twitter *link*
 ├ ❏ ${prefix}tiktok *link*
+├ ❏ ${prefix}tiktoknowm *link*
 ├ ❏ ${prefix}nhentaipdf *code*
 ├ ❏ ${prefix}tiktokaudio *link*
 ├ ❏ ${prefix}mediafire *link*
@@ -206,11 +213,10 @@ exports.rulesBot = (prefix) => {
 `
 }
 exports.infoMenu = (prefix) => {
-    return `
-┌──「 INGFO-MENU 」
+return `
+┌──「 INFO-MENU 」
 │
-├ ❏ ${prefix}cekpremium
-├ ❏ ${prefix}listpremium
+├ ❏ ${prefix}level
 ├ ❏ ${prefix}rules
 ├ ❏ ${prefix}profile
 ├ ❏ ${prefix}waktu
@@ -220,6 +226,9 @@ exports.infoMenu = (prefix) => {
 ├ ❏ ${prefix}ping
 ├ ❏ ${prefix}runtime
 ├ ❏ ${prefix}donasi
+├ ❏ ${prefix}leadboard
+├ ❏ ${prefix}cekpremium
+├ ❏ ${prefix}listpremium
 ├ ❏ ${prefix}sourcecode
 ├ ❏ ${prefix}bugreport *keluhan*
 │
