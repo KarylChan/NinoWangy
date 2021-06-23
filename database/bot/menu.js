@@ -116,12 +116,16 @@ exports.wibuMenu = (prefix) => {
 ├ ❏ ${prefix}husbu
 ├ ❏ ${prefix}waifu
 ├ ❏ ${prefix}neko
+├ ❏ ${prefix}miku
+├ ❏ ${prefix}nino
+├ ❏ ${prefix}itsuki
 ├ ❏ ${prefix}kanna
 ├ ❏ ${prefix}sagiri
+├ ❏ ${prefix}hentai
 ├ ❏ ${prefix}wallnime
 ├ ❏ ${prefix}megumin
 ├ ❏ ${prefix}topanime
-├ ❏ ${prefix}hentai
+├ ❏ ${prefix}storyanime
 ├ ❏ ${prefix}nekopoi *link*
 ├ ❏ ${prefix}nekopoisearch
 ├ ❏ ${prefix}kusonime
