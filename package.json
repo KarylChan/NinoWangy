@@ -1,8 +1,8 @@
 {
-  "name": "HEXAGONZ",
+  "name": "NinoWangy",
   "version": "1.0.0",
-  "description": "HEXA",
-  "main": "nino.s",
+  "description": "SC Nya jangan di jual ngentod",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
@@ -64,15 +64,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hexagonz"
+    "url": "git+https://github.com/Nino-chan02"
   },
   "keywords": [
     "Wasu"
   ],
-  "author": "HEXAGON",
+  "author": "Nino",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hexagonz"
+    "url": "https://github.com/Nino-chan02"
   },
-  "homepage": "https://github.com/Hexagonz"
+  "homepage": "https://github.com/Nino-chan02"
 }
