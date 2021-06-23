@@ -16,8 +16,6 @@
 
 ## CARA INSTALL DI TERMUX
 ```bash
-> termux-setup-storage
-> pkg install nodejs && pkg install git
 > git clone https://github.com/Nino-chan02/NinoWangy
 > cd NinoWangy
 > bash install.sh
