@@ -59,7 +59,7 @@
     "yt-search": "^2.8.0"
   },
   "scripts": {
-    "start": "node nino",
+    "start": "node index",
     "test": "supervisor index"
   },
   "repository": {
