@@ -230,7 +230,7 @@ return `
 ├ ❏ ${prefix}ping
 ├ ❏ ${prefix}runtime
 ├ ❏ ${prefix}donasi
-├ ❏ ${prefix}leadboard
+├ ❏ ${prefix}leaderboard
 ├ ❏ ${prefix}cekpremium
 ├ ❏ ${prefix}listpremium
 ├ ❏ ${prefix}sourcecode
