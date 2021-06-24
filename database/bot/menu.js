@@ -141,6 +141,7 @@ exports.ownerMenu = (prefix) => {
 ┌──「 OWNER-MENU 」
 │
 ├ ❏ ${prefix}bc *teks*
+├ ❏ ${prefix}resetlimit
 ├ ❏ ${prefix}clearall
 ├ ❏ ${prefix}eval *>*
 ├ ❏ ${prefix}join *link gc*
@@ -188,8 +189,9 @@ exports.downloadMenu = (prefix) => {
     return `
 ┌──「 DOWNLOAD-MENU 」
 │
-├ ❏ ${prefix}instagram *link*
-├ ❏ ${prefix}facebook *link*
+├ ❏ ${prefix}fb *link*
+├ ❏ ${prefix}igdl *link*
+├ ❏ ${prefix}igdl2 *link*
 ├ ❏ ${prefix}twitter *link*
 ├ ❏ ${prefix}tiktok *link*
 ├ ❏ ${prefix}tiktoknowm *link*
@@ -216,12 +218,46 @@ exports.rulesBot = (prefix) => {
 *_makasih sudah menggunakan Nino Bot_*
 `
 }
+exports.buyPrem = (prefix) => {
+    return `
+╭──「 I N F O 」
+│
+├ • Premium
+│
+│ ⤷ Price : 10k / 30 day
+│ ⤷ Khusus Pulsa Jadi : 15k
+│
+├ • Feature
+│
+│ ⤷ Unlimited Limit
+│ ⤷ Unlock All Command
+│ ⤷ BOT Join Group
+│ ⤷ Get XP
+│
+├ • Pembayaran
+│
+│ ⤷ GoPay ( Diutamakan )
+│ ⤷ Dana
+│ ⤷ Pulsa Telkomsel
+│
+├ • Ke Nomor 
+├ • Dana : 088286421519
+├ • GoPay : 082183281304
+├ • Pulsa : 081278895285
+│
+├ • Contact owner :
+│   wa.me/447441411493
+│
+╰──「 Arigathanks 」
+    `
+  }
 exports.infoMenu = (prefix) => {
 return `
 ┌──「 INFO-MENU 」
 │
 ├ ❏ ${prefix}level
 ├ ❏ ${prefix}rules
+├ ❏ ${prefix}limit
 ├ ❏ ${prefix}profile
 ├ ❏ ${prefix}waktu
 ├ ❏ ${prefix}botstat
