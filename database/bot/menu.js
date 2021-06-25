@@ -44,23 +44,6 @@ exports.funMenu = (prefix) => {
 └──「 *NINO BOT* 」
 `
 }
-exports.effectMenu = (prefix) => {
-    return `
-┌──「 EFFECT-IMAGE 」
-│      _usage : reply foto_
-├ ❏ ${prefix}memegen *teks|teks*
-├ ❏ ${prefix}greyscale
-├ ❏ ${prefix}removebg
-├ ❏ ${prefix}gtav
-├ ❏ ${prefix}sketch
-├ ❏ ${prefix}rainbow
-├ ❏ ${prefix}sepia
-├ ❏ ${prefix}invert
-├ ❏ ${prefix}wasted
-│
-└──「 *NINO BOT* 」
-`
-}
 exports.otherMenu = (prefix) => {
     return `
 ┌──「 OTHER-MENU 」
@@ -70,7 +53,7 @@ exports.otherMenu = (prefix) => {
 ├ ❏ ${prefix}google *query*
 ├ ❏ ${prefix}image *query*
 ├ ❏ ${prefix}pinterest *query*
-├ ❏ ${prefix}searchgrup *query*
+├ ❏ ${prefix}removebg *foto*
 ├ ❏ ${prefix}nulis *teks*
 ├ ❏ ${prefix}igstalk *username*
 ├ ❏ ${prefix}githubstalk *username*
@@ -98,7 +81,6 @@ exports.stickerMenu = (prefix) => {
 ├ ❏ ${prefix}smeme *teks|teks*
 ├ ❏ ${prefix}swm *pack|author*
 ├ ❏ ${prefix}take *pack|author* 
-├ ❏ ${prefix}trigger *reply foto*
 ├ ❏ ${prefix}tovideo *reply sgif*
 │
 └──「 *NINO BOT* 」
