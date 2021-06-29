@@ -8,9 +8,12 @@ exports.gameMenu = (prefix) => {
 ├ ❏ ${prefix}tictactoe @tag
 ├ ❏ ${prefix}deletettt
 ├ ❏ ${prefix}asahotak
+├ ❏ ${prefix}tebaklirik
 ├ ❏ ${prefix}tebakkata
 ├ ❏ ${prefix}susunkata
+├ ❏ ${prefix}tebakkimia
 ├ ❏ ${prefix}caklontong
+├ ❏ ${prefix}tebakjenaka
 ├ ❏ ${prefix}tebakanime
 ├ ❏ ${prefix}tebakgambar
 ├ ❏ ${prefix}tebakbendera
