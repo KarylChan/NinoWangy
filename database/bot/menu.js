@@ -3,16 +3,18 @@ exports.gameMenu = (prefix) => {
 ┌──「 GAME-MENU 」
 │
 ├ ❏ ${prefix}slot
+├ ❏ ${prefix}limitgame
+├ ❏ ${prefix}family100
 ├ ❏ ${prefix}tictactoe @tag
 ├ ❏ ${prefix}deletettt
-├ ❏ ${prefix}tebakgambar
-├ ❏ ${prefix}canceltg
-├ ❏ ${prefix}sambungkata [cicak]
-├ ❏ ${prefix}deletesk
-├ ❏ ${prefix}akinator
-├ ❏ ${prefix}deleteakinator
-├ ❏ ${prefix}tebakgokil
+├ ❏ ${prefix}asahotak
+├ ❏ ${prefix}tebakkata
+├ ❏ ${prefix}susunkata
+├ ❏ ${prefix}caklontong
 ├ ❏ ${prefix}tebakanime
+├ ❏ ${prefix}tebakgambar
+├ ❏ ${prefix}tebakbendera
+├ ❏ ${prefix}tebaksiapakahaku
 ├ ❏ ${prefix}suit *batu/kertas/gunting*
 │
 └──「 *NINO BOT* 」
@@ -53,7 +55,6 @@ exports.otherMenu = (prefix) => {
 ├ ❏ ${prefix}google *query*
 ├ ❏ ${prefix}image *query*
 ├ ❏ ${prefix}pinterest *query*
-├ ❏ ${prefix}removebg *foto*
 ├ ❏ ${prefix}nulis *teks*
 ├ ❏ ${prefix}igstalk *username*
 ├ ❏ ${prefix}githubstalk *username*
@@ -189,14 +190,21 @@ exports.downloadMenu = (prefix) => {
 }
 exports.rulesBot = (prefix) => {
     return `
-◪ *RULES THE BOT*
-| ◪ Jangan Di Telpon
-| ◪ Jangan Di Spam
-| ◪ Jangan Hina Bot
-| ◪ Hargai Bot
-| ◪ Gunakan Dengan Bijak 
-*_Ketahuan Langgar Di Banned Permanen_*
-*_makasih sudah menggunakan Nino Bot_*
+-----[ RULES ]-----
+
+1. Jangan spam bot. 
+Sanksi: *WARN/SOFT BLOCK*
+
+2. Jangan telepon bot.
+Sanksi: *SOFT BLOCK*
+
+3. Jangan mengejek bot.
+Sanksi: *PERMANENT BLOCK*
+
+Jika sudah dipahami rules-nya, silakan ketik *#menu* untuk memulai!
+
+Owner Nino BOT:
+wa.me/6281278895286
 `
 }
 exports.buyPrem = (prefix) => {
@@ -238,7 +246,6 @@ return `
 │
 ├ ❏ ${prefix}level
 ├ ❏ ${prefix}rules
-├ ❏ ${prefix}limit
 ├ ❏ ${prefix}profile
 ├ ❏ ${prefix}waktu
 ├ ❏ ${prefix}botstat
