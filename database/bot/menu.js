@@ -126,7 +126,6 @@ exports.ownerMenu = (prefix) => {
 ┌──「 OWNER-MENU 」
 │
 ├ ❏ ${prefix}bc *teks*
-├ ❏ ${prefix}resetlimit
 ├ ❏ ${prefix}clearall
 ├ ❏ ${prefix}eval *>*
 ├ ❏ ${prefix}join *link gc*
