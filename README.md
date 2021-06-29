@@ -32,5 +32,7 @@
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
 * [`MhankBarBar`](https://github.com/MhankBarBar)
 * [`Arip`](https://github.com/Akkun3704)
+* [`Aqul`](https://github.com/zennn08)
+* [`Hexa`](https://github.com/Hexagonz)
   
   
