@@ -77,8 +77,7 @@ exports.stickerMenu = (prefix) => {
 ├ ❏ ${prefix}patrick
 ├ ❏ ${prefix}garwgura
 ├ ❏ ${prefix}toimg
-├ ❏ ${prefix}attp *teks/reply teks*
-├ ❏ ${prefix}ttp *teks/reply stiker*
+├ ❏ ${prefix}attp *teks*
 ├ ❏ ${prefix}semoji *emoji*
 ├ ❏ ${prefix}sticker *reply foto/video*
 ├ ❏ ${prefix}smeme *teks|teks*
@@ -206,7 +205,7 @@ Sanksi: *PERMANENT BLOCK*
 Jika sudah dipahami rules-nya, silakan ketik *#menu* untuk memulai!
 
 Owner Nino BOT:
-wa.me/6281278895286
+wa.me/6288286421519
 `
 }
 exports.buyPrem = (prefix) => {
@@ -237,7 +236,7 @@ exports.buyPrem = (prefix) => {
 ├ • Pulsa : 081278895285
 │
 ├ • Contact owner :
-│   wa.me/447441411493
+│   wa.me/6288286421519
 │
 ╰──「 Arigathanks 」
     `
