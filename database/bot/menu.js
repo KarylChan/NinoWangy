@@ -5,6 +5,7 @@ exports.gameMenu = (prefix) => {
 ├ ❏ ${prefix}slot
 ├ ❏ ${prefix}limitgame
 ├ ❏ ${prefix}family100
+├ ❏ ${prefix}kuismath
 ├ ❏ ${prefix}tictactoe @tag
 ├ ❏ ${prefix}deletettt
 ├ ❏ ${prefix}asahotak
@@ -78,6 +79,7 @@ exports.stickerMenu = (prefix) => {
 ├ ❏ ${prefix}garwgura
 ├ ❏ ${prefix}toimg
 ├ ❏ ${prefix}attp *teks*
+├ ❏ ${prefix}stickeranime
 ├ ❏ ${prefix}semoji *emoji*
 ├ ❏ ${prefix}sticker *reply foto/video*
 ├ ❏ ${prefix}smeme *teks|teks*
