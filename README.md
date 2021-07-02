@@ -16,6 +16,8 @@
 
 ## Update News
 ```bash
+> Tebak Lagu
+> Tebak Tebakan
 > Playstore
 > Shopee
 > Mining
