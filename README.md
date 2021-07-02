@@ -14,6 +14,14 @@
 </h4>
 </p>
 
+## Update News
+```
+> Playstore
+> Shopee
+> Mining
+> Ig user
+```
+
 ## CARA INSTALL DI TERMUX
 ```bash
 > git clone https://github.com/Nino-chan02/NinoWangy
