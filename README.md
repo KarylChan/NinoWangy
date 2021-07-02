@@ -15,7 +15,7 @@
 </p>
 
 ## Update News
-```
+```bash
 > Playstore
 > Shopee
 > Mining
