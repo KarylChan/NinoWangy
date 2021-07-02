@@ -10,12 +10,14 @@ exports.gameMenu = (prefix) => {
 ├ ❏ ${prefix}deletettt
 ├ ❏ ${prefix}asahotak
 ├ ❏ ${prefix}tebaklirik
+├ ❏ ${prefix}tebaklagu
 ├ ❏ ${prefix}tebakkata
 ├ ❏ ${prefix}susunkata
 ├ ❏ ${prefix}tebakkimia
 ├ ❏ ${prefix}caklontong
 ├ ❏ ${prefix}tebakjenaka
 ├ ❏ ${prefix}tebakanime
+├ ❏ ${prefix}tebaktebakan
 ├ ❏ ${prefix}tebakgambar
 ├ ❏ ${prefix}tebakbendera
 ├ ❏ ${prefix}tebaksiapakahaku
