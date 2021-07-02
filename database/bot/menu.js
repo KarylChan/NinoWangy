@@ -28,6 +28,7 @@ exports.funMenu = (prefix) => {
     return `
 ┌──「 FUN-MENU 」
 │
+├ ❏ ${prefix}mining
 ├ ❏ ${prefix}cekwatak
 ├ ❏ ${prefix}cekmati [nama]
 ├ ❏ ${prefix}citacita
@@ -55,11 +56,14 @@ exports.otherMenu = (prefix) => {
 ┌──「 OTHER-MENU 」
 │
 ├ ❏ ${prefix}brainly *query*
+├ ❏ ${prefix}shopee *product*
+├ ❏ ${prefix}playstore *query*
 ├ ❏ ${prefix}ssweb *query*
 ├ ❏ ${prefix}google *query*
 ├ ❏ ${prefix}image *query*
 ├ ❏ ${prefix}pinterest *query*
 ├ ❏ ${prefix}nulis *teks*
+├ ❏ ${prefix}iguser *ussername*
 ├ ❏ ${prefix}igstalk *username*
 ├ ❏ ${prefix}githubstalk *username*
 ├ ❏ ${prefix}tiktokstalk *ussername*
