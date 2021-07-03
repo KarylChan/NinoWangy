@@ -122,6 +122,7 @@ exports.wibuMenu = (prefix) => {
 ├ ❏ ${prefix}nekopoisearch
 ├ ❏ ${prefix}kusonime
 ├ ❏ ${prefix}otakudesu
+├ ❏ ${prefix}doujindesu
 ├ ❏ ${prefix}otakuongoing
 ├ ❏ ${prefix}nhentai *code*
 │
