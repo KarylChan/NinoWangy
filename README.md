@@ -16,6 +16,7 @@
 
 ## Update News
 ```bash
+> Doujindesu search
 > Tebak Lagu
 > Tebak Tebakan
 > Playstore
